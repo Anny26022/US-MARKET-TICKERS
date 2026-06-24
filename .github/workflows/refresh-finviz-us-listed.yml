@@ -1,0 +1,62 @@
+name: Refresh Finviz US Listed Dataset
+
+on:
+  schedule:
+    # Runs Tue-Sat UTC after the prior US regular market session.
+    # 00:30 UTC is 8:30 PM ET during daylight time and 7:30 PM ET during standard time.
+    - cron: "30 0 * * 2-6"
+  workflow_dispatch:
+
+concurrency:
+  group: refresh-finviz-us-listed
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci --ignore-scripts
+
+      - name: Export Finviz universe
+        run: node scripts/probes/finviz/export-finviz-us-listed-equities.mjs --force --delay-ms=500
+
+      - name: Enrich fast screener fields
+        run: node scripts/probes/finviz/enrich-finviz-us-listed-equities.mjs --force --skip-profiles --screener-delay-ms=500
+
+      - name: Verify generated dataset
+        run: |
+          test -s docs/integrations/generated/finviz-us-listed-equities-and-etfs.csv
+          test -s docs/integrations/generated/finviz-us-listed-equities-and-etfs.json
+          test -s docs/integrations/generated/finviz-us-listed-equities-and-etfs.meta.json
+          node -e "const fs=require('fs'); const rows=JSON.parse(fs.readFileSync('docs/integrations/generated/finviz-us-listed-equities-and-etfs.json','utf8')); if (!Array.isArray(rows) || rows.length < 10000) throw new Error('Unexpected Finviz row count: '+(Array.isArray(rows)?rows.length:'not array')); console.log('Rows:', rows.length);"
+
+      - name: Commit updated dataset
+        run: |
+          git config --local user.name "github-actions[bot]"
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git add docs/integrations/generated/finviz-us-listed-equities-and-etfs.csv
+          git add docs/integrations/generated/finviz-us-listed-equities-and-etfs.json
+          git add docs/integrations/generated/finviz-us-listed-equities-and-etfs.meta.json
+          git add docs/integrations/generated/finviz-us-listed-equities-and-etfs.README.md
+          git diff --cached --quiet || git commit -m "Refresh Finviz US listed dataset"
+
+      - name: Push changes
+        if: success()
+        run: git push

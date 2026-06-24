@@ -1,0 +1,7 @@
+node_modules/
+.DS_Store
+*.log
+.env
+docs/integrations/generated/.finviz-export-cache/
+docs/integrations/generated/.finviz-enrichment-cache/
+

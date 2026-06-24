@@ -1,0 +1,13 @@
+{
+  "name": "us-market-tickers",
+  "version": "1.0.0",
+  "private": false,
+  "type": "module",
+  "scripts": {
+    "refresh": "node scripts/probes/finviz/export-finviz-us-listed-equities.mjs --force --delay-ms=500 && node scripts/probes/finviz/enrich-finviz-us-listed-equities.mjs --force --skip-profiles --screener-delay-ms=500",
+    "check": "node --check scripts/probes/finviz/export-finviz-us-listed-equities.mjs && node --check scripts/probes/finviz/enrich-finviz-us-listed-equities.mjs"
+  },
+  "dependencies": {
+    "jsdom": "^26.1.0"
+  }
+}

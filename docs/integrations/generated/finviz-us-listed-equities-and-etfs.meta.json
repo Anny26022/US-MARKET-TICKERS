@@ -1,0 +1,56 @@
+{
+  "generatedAt": "2026-06-24T05:37:53.936Z",
+  "universe": "Finviz public screener default US-listed universe, custom view.",
+  "rowCount": 11317,
+  "screenerReportedTotal": 11317,
+  "sourceUrls": {
+    "screener": "https://finviz.com/screener?v=152&ft=4&o=ticker&c=1%2C2%2C3%2C4%2C5%2C79%2C129%2C70%2C103%2C100%2C105",
+    "themesMap": "https://finviz.com/map.ashx?t=themes",
+    "themesBundle": "https://finviz.com/assets/dist/6574.v1.dcf34c3a.js"
+  },
+  "columns": [
+    "ticker",
+    "company",
+    "securityType",
+    "sector",
+    "industry",
+    "theme",
+    "subtheme",
+    "exchange",
+    "index",
+    "country",
+    "ipoDate",
+    "etfCategory",
+    "etfAssetType",
+    "etfTags"
+  ],
+  "themeMapping": {
+    "method": "Mapped from the public Themes Map hierarchy bundle. Finviz exposes theme/subtheme as filters, not direct screener output columns.",
+    "tickersWithTheme": 927,
+    "themeTickerAssignments": 2356,
+    "subthemeCount": 268
+  },
+  "notes": [
+    "ETF category, asset type, and tags are included because Finviz has separate ETF descriptors and most ETF rows do not appear in the themes map hierarchy.",
+    "Index and IPO Date are Finviz custom view columns. Blank values represent '-' on the source page.",
+    "Quotes and screener rows are delayed/subject to Finviz public-page availability."
+  ],
+  "enrichment": {
+    "generatedAt": "2026-06-24T05:38:22.514Z",
+    "requestedColumnsAdded": [
+      "description",
+      "website",
+      "ceo",
+      "employees",
+      "sharesOutstanding",
+      "sharesFloat",
+      "insiderOwnership",
+      "institutionalOwnership"
+    ],
+    "bulkFieldsMatched": 11317,
+    "quoteProfilesFetched": 0,
+    "quoteProfileErrors": 0,
+    "quoteProfilesSkipped": true,
+    "quoteProfilesCacheOnly": false
+  }
+}
