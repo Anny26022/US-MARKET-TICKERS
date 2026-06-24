@@ -26,6 +26,13 @@ This intentionally skips Finviz quote/profile pages. It only uses the faster scr
 - index
 - country
 - IPO date
+- change %
+- current volume
+- performance 1 week
+- performance 1 month
+- performance 3 month
+- performance 6 month
+- performance 12 month
 - employees
 - shares outstanding
 - shares float

@@ -26,6 +26,8 @@ Columns:
 - `sector`, `industry`
 - `theme`, `subtheme`: mapped from the public Finviz Themes Map hierarchy bundle. Finviz exposes these as screener filters, not direct screener output columns.
 - `exchange`, `index`, `country`, `ipoDate`
+- `changePercent`, `volume`
+- `performanceWeek`, `performanceMonth`, `performanceQuarter`, `performanceHalfYear`, `performanceYear`
 - `description`, `website`, `ceo`: parsed from Finviz quote/profile pages when safely cached. Full live profile-page backfill is rate-limited by Finviz and should be resumed slowly.
 - `employees`, `sharesOutstanding`, `sharesFloat`, `insiderOwnership`, `institutionalOwnership`: pulled from Finviz custom screener columns and matched by ticker.
 - `etfCategory`, `etfAssetType`, `etfTags`: included because Finviz exposes separate ETF descriptors and most ETF rows do not have map theme/subtheme assignments.
@@ -36,4 +38,4 @@ Current export summary:
 - Tickers with theme/subtheme: 927
 - CSV rows: 11,317 data rows plus one header row
 - Bulk enrichment matched: 11,317 tickers
-- Cached quote/profile rows enriched: 149 tickers
+- Cached quote/profile rows enriched: 0 tickers
