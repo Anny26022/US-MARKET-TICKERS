@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-24T05:37:53.936Z",
+  "generatedAt": "2026-06-24T05:56:00.324Z",
   "universe": "Finviz public screener default US-listed universe, custom view.",
   "rowCount": 11317,
   "screenerReportedTotal": 11317,
@@ -36,7 +36,7 @@
     "Quotes and screener rows are delayed/subject to Finviz public-page availability."
   ],
   "enrichment": {
-    "generatedAt": "2026-06-24T05:38:22.514Z",
+    "generatedAt": "2026-06-24T06:02:25.144Z",
     "requestedColumnsAdded": [
       "description",
       "website",
