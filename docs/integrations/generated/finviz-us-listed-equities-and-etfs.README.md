@@ -26,7 +26,10 @@ Columns:
 - `sector`, `industry`
 - `theme`, `subtheme`: mapped from the public Finviz Themes Map hierarchy bundle. Finviz exposes these as screener filters, not direct screener output columns.
 - `exchange`, `index`, `country`, `ipoDate`
+- `marketCap`: Finviz market capitalization display string.
 - `changePercent`, `volume`
+- `averageVolume`: Finviz 3-month average volume.
+- `relativeVolume`: current Finviz volume relative to average volume.
 - `performanceWeek`, `performanceMonth`, `performanceQuarter`, `performanceHalfYear`, `performanceYear`
 - `description`, `website`, `ceo`: parsed from Finviz quote/profile pages when safely cached. Full live profile-page backfill is rate-limited by Finviz and should be resumed slowly.
 - `employees`, `sharesOutstanding`, `sharesFloat`, `insiderOwnership`, `institutionalOwnership`: pulled from Finviz custom screener columns and matched by ticker.

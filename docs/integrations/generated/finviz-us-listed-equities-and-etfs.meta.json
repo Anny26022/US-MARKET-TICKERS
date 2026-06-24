@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-06-24T06:31:51.998Z",
+  "generatedAt": "2026-06-24T06:49:49.575Z",
   "universe": "Finviz public screener default US-listed universe, custom view.",
   "rowCount": 11317,
   "screenerReportedTotal": 11317,
   "sourceUrls": {
-    "screener": "https://finviz.com/screener?v=152&ft=4&o=ticker&c=1%2C2%2C3%2C4%2C5%2C79%2C129%2C70%2C66%2C67%2C42%2C43%2C44%2C45%2C46%2C103%2C100%2C105",
+    "screener": "https://finviz.com/screener?v=152&ft=4&o=ticker&c=1%2C2%2C3%2C4%2C5%2C79%2C129%2C70%2C6%2C66%2C67%2C63%2C64%2C42%2C43%2C44%2C45%2C46%2C103%2C100%2C105",
     "themesMap": "https://finviz.com/map.ashx?t=themes",
     "themesBundle": "https://finviz.com/assets/dist/6574.v1.dcf34c3a.js"
   },
@@ -20,8 +20,11 @@
     "index",
     "country",
     "ipoDate",
+    "marketCap",
     "changePercent",
     "volume",
+    "averageVolume",
+    "relativeVolume",
     "performanceWeek",
     "performanceMonth",
     "performanceQuarter",
@@ -39,12 +42,13 @@
   },
   "notes": [
     "ETF category, asset type, and tags are included because Finviz has separate ETF descriptors and most ETF rows do not appear in the themes map hierarchy.",
-    "Change and performance fields are Finviz percentage strings. Volume is the current reported volume string from Finviz.",
+    "Market Cap, Volume, and Average Volume are Finviz display strings. Average Volume is Finviz's 3-month average volume. Relative Volume is current volume relative to average volume.",
+    "Change and performance fields are Finviz percentage strings.",
     "Index and IPO Date are Finviz custom view columns. Blank values represent '-' on the source page.",
     "Quotes and screener rows are delayed/subject to Finviz public-page availability."
   ],
   "enrichment": {
-    "generatedAt": "2026-06-24T06:32:19.782Z",
+    "generatedAt": "2026-06-24T06:50:17.348Z",
     "requestedColumnsAdded": [
       "description",
       "website",

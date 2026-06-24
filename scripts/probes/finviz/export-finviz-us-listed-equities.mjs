@@ -26,8 +26,11 @@ const columns = [
   { key: "index", header: "index" },
   { key: "country", header: "country" },
   { key: "ipoDate", header: "ipoDate" },
+  { key: "marketCap", header: "marketCap" },
   { key: "changePercent", header: "changePercent" },
   { key: "volume", header: "volume" },
+  { key: "averageVolume", header: "averageVolume" },
+  { key: "relativeVolume", header: "relativeVolume" },
   { key: "performanceWeek", header: "performanceWeek" },
   { key: "performanceMonth", header: "performanceMonth" },
   { key: "performanceQuarter", header: "performanceQuarter" },
@@ -47,8 +50,11 @@ const customColumnIds = [
   79, // index
   129, // exchange
   70, // ipo date
+  6, // market cap
   66, // change
   67, // volume
+  63, // average volume
+  64, // relative volume
   42, // performance week
   43, // performance month
   44, // performance quarter
@@ -175,16 +181,19 @@ function parseScreenerPage(html) {
       index: cells[5] ?? "",
       exchange: cells[6] ?? "",
       ipoDate: cells[7] ?? "",
-      changePercent: cells[8] ?? "",
-      volume: cells[9] ?? "",
-      performanceWeek: cells[10] ?? "",
-      performanceMonth: cells[11] ?? "",
-      performanceQuarter: cells[12] ?? "",
-      performanceHalfYear: cells[13] ?? "",
-      performanceYear: cells[14] ?? "",
-      etfCategory: cells[15] ?? "",
-      etfAssetType: cells[16] ?? "",
-      etfTags: cells[17] ?? "",
+      marketCap: cells[8] ?? "",
+      changePercent: cells[9] ?? "",
+      volume: cells[10] ?? "",
+      averageVolume: cells[11] ?? "",
+      relativeVolume: cells[12] ?? "",
+      performanceWeek: cells[13] ?? "",
+      performanceMonth: cells[14] ?? "",
+      performanceQuarter: cells[15] ?? "",
+      performanceHalfYear: cells[16] ?? "",
+      performanceYear: cells[17] ?? "",
+      etfCategory: cells[18] ?? "",
+      etfAssetType: cells[19] ?? "",
+      etfTags: cells[20] ?? "",
     };
   }).filter((row) => row.ticker);
 
@@ -375,7 +384,8 @@ async function main() {
     },
     notes: [
       "ETF category, asset type, and tags are included because Finviz has separate ETF descriptors and most ETF rows do not appear in the themes map hierarchy.",
-      "Change and performance fields are Finviz percentage strings. Volume is the current reported volume string from Finviz.",
+      "Market Cap, Volume, and Average Volume are Finviz display strings. Average Volume is Finviz's 3-month average volume. Relative Volume is current volume relative to average volume.",
+      "Change and performance fields are Finviz percentage strings.",
       "Index and IPO Date are Finviz custom view columns. Blank values represent '-' on the source page.",
       "Quotes and screener rows are delayed/subject to Finviz public-page availability.",
     ],

@@ -26,8 +26,11 @@ This intentionally skips Finviz quote/profile pages. It only uses the faster scr
 - index
 - country
 - IPO date
+- market cap
 - change %
 - current volume
+- average volume, Finviz 3-month average
+- relative volume, current volume divided by average volume
 - performance 1 week
 - performance 1 month
 - performance 3 month
