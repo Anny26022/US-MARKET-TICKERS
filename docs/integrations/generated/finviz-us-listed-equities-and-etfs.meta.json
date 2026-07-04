@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-07-03T04:32:54.027Z",
+  "generatedAt": "2026-07-04T04:18:20.129Z",
   "universe": "Finviz public screener default US-listed universe, custom view.",
   "rowCount": 11413,
   "screenerReportedTotal": 11413,
   "sourceUrls": {
     "screener": "https://finviz.com/screener?v=152&ft=4&o=ticker&c=1%2C2%2C3%2C4%2C5%2C79%2C129%2C70%2C6%2C66%2C67%2C63%2C64%2C42%2C43%2C44%2C45%2C46%2C103%2C100%2C105",
     "themesMap": "https://finviz.com/map.ashx?t=themes",
-    "themesBundle": "https://finviz.com/assets/dist/6574.v1.e9acf185.js"
+    "themesBundle": "https://finviz.com/assets/dist/6574.v1.b89a4f6b.js"
   },
   "columns": [
     "ticker",
@@ -48,7 +48,7 @@
     "Quotes and screener rows are delayed/subject to Finviz public-page availability."
   ],
   "enrichment": {
-    "generatedAt": "2026-07-03T04:39:35.698Z",
+    "generatedAt": "2026-07-04T04:24:56.104Z",
     "requestedColumnsAdded": [
       "description",
       "website",
