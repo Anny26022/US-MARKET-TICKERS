@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-09-08T05:07:38.443Z",
+  "generatedAt": "2026-09-09T05:06:41.211Z",
   "universe": "Finviz public screener default US-listed universe, custom view.",
-  "rowCount": 11606,
-  "screenerReportedTotal": 11606,
+  "rowCount": 11609,
+  "screenerReportedTotal": 11609,
   "sourceUrls": {
     "screener": "https://finviz.com/screener?v=152&ft=4&o=ticker&c=1%2C2%2C3%2C4%2C5%2C79%2C129%2C70%2C6%2C66%2C67%2C63%2C64%2C42%2C43%2C44%2C45%2C46%2C103%2C100%2C105",
     "themesMap": "https://finviz.com/map.ashx?t=themes",
-    "themesBundle": "https://finviz.com/assets/dist/6574.v1.1e422f5e.js"
+    "themesBundle": "https://finviz.com/assets/dist/6574.v1.8f970fd0.js"
   },
   "columns": [
     "ticker",
@@ -48,7 +48,7 @@
     "Quotes and screener rows are delayed/subject to Finviz public-page availability."
   ],
   "enrichment": {
-    "generatedAt": "2026-09-08T05:14:27.322Z",
+    "generatedAt": "2026-09-09T05:13:04.655Z",
     "requestedColumnsAdded": [
       "description",
       "website",
@@ -59,7 +59,7 @@
       "insiderOwnership",
       "institutionalOwnership"
     ],
-    "bulkFieldsMatched": 11606,
+    "bulkFieldsMatched": 11609,
     "quoteProfilesFetched": 0,
     "quoteProfileErrors": 0,
     "quoteProfilesSkipped": true,
